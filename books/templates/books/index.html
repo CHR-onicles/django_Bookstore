@@ -53,18 +53,22 @@
     <!-- END TITLE -->
 
     <!-- CONTENT -->
-    <div class="container">
+    <div class="container my-5">
       {% for book in books %}
       <div class="card rounded-4" style="width: 18rem">
         <img src="{{ book.thumbnailUrl }}" class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title">{{ book.title }}</h5>
-          <a href="#" class="btn btn-primary">Read more</a>
+          <a href="#" class="btn">Read more</a>
         </div>
       </div>
       {% endfor %}
     </div>
     <!-- END CONTENT -->
+
+    <!-- FOOTER -->
+
+    <!-- END FOOTER -->
 
     <!-- SCRIPTS -->
     <script

@@ -1,11 +1,16 @@
 body {
   background-color: bisque;
+  position: relative;
 }
 
 h1 {
   text-align: center;
   font-size: 3rem;
   margin: 20px 0px;
+  background-color: brown;
+  color: white;
+  letter-spacing: 5px;
+  font-family: "Century gothic";
 }
 
 .container {
@@ -20,7 +25,7 @@ h1 {
 }
 
 .card:hover {
-  transform: rotate(-3deg);
+  transform: rotate(-2deg);
   box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px, inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
   cursor: pointer;
 }
@@ -33,12 +38,15 @@ h1 {
   font-size: 1.2em;
 }
 
-.btn-primary {
+.btn {
   background-color: brown;
   border-color: brown;
+  color: white;
 }
 
-.btn-primary:hover {
+.btn:hover {
   background-color: rgb(226, 58, 58);
   border-color: rgb(226, 58, 58);
+  outline: none;
+  color: white;
 }
