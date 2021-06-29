@@ -19,8 +19,15 @@ def index(request):
 
 
 def detail(request, id):
+    single_book = ''
+
+    for book in data:
+        if book.get('id') == id:
+            single_book = book
+
+    print(single_book)
+
     context_dict = {
-        'books': data,
-        'id': id
+        'book': single_book
     }
     return render(request, 'books/detail.html', context_dict)
