@@ -19,4 +19,8 @@ def index(request):
 
 
 def detail(request, id):
-    return render(request, 'books/detail.html')
+    context_dict = {
+        'books': data,
+        'id': id
+    }
+    return render(request, 'books/detail.html', context_dict)
