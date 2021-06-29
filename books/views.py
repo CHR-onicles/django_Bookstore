@@ -25,8 +25,6 @@ def detail(request, id):
         if book.get('id') == id:
             single_book = book
 
-    print(single_book)
-
     context_dict = {
         'book': single_book
     }
