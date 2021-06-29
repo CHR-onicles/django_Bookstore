@@ -79,12 +79,17 @@ h1 {
   background-color: white;
   color: brown;
   display: grid;
+  gap: 0;
   grid-template-columns: 1fr;
   border-radius: 10px;
   text-align: center;
+  align-items: flex-start;
 }
 
 .display-6 {
   font-size: 1.5em;
   font-weight: 400;
 }
+
+/* .read-more-btn {
+} */

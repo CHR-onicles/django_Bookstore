@@ -13,6 +13,7 @@
   {% endif %}
 
   <h6 class="display-6 mb-0">Description:</h6>
-  <p class="fst-italic">{{ book.longDescription }}</p>
+  <p class="fst-italic">{{ book.longDescription|truncatewords:"50"}} <span>...</span></p>
+  <button class="btn mb-1 read-more-btn">Read more...</button>
 </div>
 {% endblock content %}
