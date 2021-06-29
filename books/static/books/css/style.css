@@ -17,11 +17,12 @@ h1 {
 
 .card {
   transition: all 0.3s ease;
-  border-radius: 10px;
 }
 
 .card:hover {
-  transform: rotate(-7deg);
+  transform: rotate(-3deg);
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px, inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+  cursor: pointer;
 }
 
 .img-div > img {
@@ -30,4 +31,14 @@ h1 {
 
 .text-div > p {
   font-size: 1.2em;
+}
+
+.btn-primary {
+  background-color: brown;
+  border-color: brown;
+}
+
+.btn-primary:hover {
+  background-color: rgb(226, 58, 58);
+  border-color: rgb(226, 58, 58);
 }
