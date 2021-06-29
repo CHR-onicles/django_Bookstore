@@ -77,5 +77,14 @@ h1 {
 
 .detail-text-div {
   background-color: white;
-  color: rgb(243, 63, 63);
+  color: brown;
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.display-6 {
+  font-size: 1.5em;
+  font-weight: 400;
 }

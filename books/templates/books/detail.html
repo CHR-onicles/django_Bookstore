@@ -1,14 +1,18 @@
 {% extends 'base.html' %} {% block content %}
-<h2>{{ book.title }}</h2>
-<div class="d-flex justify-content-center">
+<h2 class="text-light text-center display-5">{{ book.title }}</h2>
+<div class="d-flex justify-content-center my-5">
   <img src="{{ book.thumbnailUrl}}" width="300" alt="" />
 </div>
-<div class="container detail-text-div">
+
+<div class="container detail-text-div my-5">
+  <h6 class="display-6 mb-0">Quick Summary:</h6>
   {% if book.shortDescription is None %}
-  <p>NOthing here</p>
+  <p class="fst-italic">This book is about something too interesting to write a short description about.</p>
   {% else %}
-  <p>{{ book.shortDescription }}</p>
+  <p class="fst-italic">{{ book.shortDescription }}</p>
   {% endif %}
-  <p>{{ book.longDescription }}</p>
+
+  <h6 class="display-6 mb-0">Description:</h6>
+  <p class="fst-italic">{{ book.longDescription }}</p>
 </div>
 {% endblock content %}
