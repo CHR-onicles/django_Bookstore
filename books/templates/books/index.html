@@ -4,9 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Books homepage</title>
+    <title>ZeBooks</title>
   </head>
   <body>
-    <h2>Grandeur Bookstore</h2>
+    <h2>Zelda Bookstore</h2>
+
+    {% for book in books %}
+    <div class="card">
+      <div class="text-div">
+        <p>{{ book.title }}</p>
+      </div>
+      <div>
+        <img src="{{ book.thumbnailUrl}}" alt="" width="200" />
+      </div>
+    </div>
+    {% endfor %}
   </body>
 </html>

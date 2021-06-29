@@ -11,6 +11,6 @@ data = json.loads(book_data)
 def index(request):
 
     context_dict = {
-        'data': data
+        'books': data
     }
     return render(request, 'books/index.html', context_dict)
