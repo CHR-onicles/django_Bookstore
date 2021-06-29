@@ -1,6 +1,16 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render
-from django.http import HttpResponse
+import os
+import json
+
+from django_Bookstore.settings import BASE_DIR
+
+book_data = open(os.path.join(BASE_DIR, 'books/static/books/assets/books.json')).read()
+data = json.loads(book_data)
 
 def index(request):
-    return render(request, 'books/index.html')
+
+    context_dict = {
+        'data': data
+    }
+    return render(request, 'books/index.html', context_dict)
