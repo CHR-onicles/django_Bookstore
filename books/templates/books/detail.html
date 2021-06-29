@@ -3,7 +3,12 @@
 <div class="d-flex justify-content-center">
   <img src="{{ book.thumbnailUrl}}" width="300" alt="" />
 </div>
-
-<p>{{ book.shortDescription }}</p>
-<p>{{ book.longDescription }}</p>
+<div class="container detail-text-div">
+  {% if book.shortDescription is None %}
+  <p>NOthing here</p>
+  {% else %}
+  <p>{{ book.shortDescription }}</p>
+  {% endif %}
+  <p>{{ book.longDescription }}</p>
+</div>
 {% endblock content %}

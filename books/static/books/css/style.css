@@ -51,3 +51,8 @@ h1 {
   outline: none;
   color: white;
 }
+
+.detail-text-div {
+  background-color: white;
+  color: rgb(226, 58, 58);
+}
