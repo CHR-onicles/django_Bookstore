@@ -39,7 +39,7 @@ h1 {
   font-size: 1.2em;
 }
 
-.btn {
+/* .btn {
   background-color: brown;
   border-color: brown;
   color: white;
@@ -50,9 +50,45 @@ h1 {
   border-color: rgb(226, 58, 58);
   outline: none;
   color: white;
+} */
+
+.btn {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background-color: brown;
+  border-color: brown;
+  color: white;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: -35%;
+  height: 100%;
+  width: 0;
+  transform: skew(-30deg);
+  transition-duration: 0.5s;
+  transform-origin: top left;
+}
+
+.btn:hover:before {
+  background-color: rgb(243, 63, 63);
+  border-color: rgb(243, 63, 63);
+  width: 160%;
+  height: 100%;
+  outline: none;
+}
+
+.btn:hover {
+  color: white;
+  border-color: rgb(243, 63, 63);
+  outline: none;
 }
 
 .detail-text-div {
   background-color: white;
-  color: rgb(226, 58, 58);
+  color: rgb(243, 63, 63);
 }
