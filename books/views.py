@@ -5,8 +5,10 @@ import json
 
 from django_Bookstore.settings import BASE_DIR
 
-book_data = open(os.path.join(BASE_DIR, 'books/static/books/assets/books.json')).read()
+book_data = open(os.path.join(
+    BASE_DIR, 'books/static/books/assets/books.json')).read()
 data = json.loads(book_data)
+
 
 def index(request):
 
@@ -14,3 +16,7 @@ def index(request):
         'books': data
     }
     return render(request, 'books/index.html', context_dict)
+
+
+def detail(request, id):
+    return render(request, 'books/detail.html')
