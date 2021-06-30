@@ -1,15 +1,16 @@
 function readMoreFunc() {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("more");
-  var btnText = document.getElementById("myBtn");
+  // l_desc and l_desc_trunc are global variables that will be declared at the part of the HTML where the script is included
 
-  if (dots.style.display === "none") {
-    dots.style.display = "inline";
-    btnText.innerHTML = "Read more";
-    moreText.style.display = "none";
-  } else {
-    dots.style.display = "none";
+  var long_desc = document.getElementById("long-desc");
+  var btnText = document.getElementById("read-more");
+
+  if (long_desc.innerText.slice(long_desc.innerText.length - 1) === "…") {
+    console.log(long_desc.innerText.slice(long_desc.innerText.length - 1));
+    long_desc.innerHTML = l_desc;
     btnText.innerHTML = "Read less";
-    moreText.style.display = "inline";
+  } else {
+    console.log(long_desc.innerText.slice(long_desc.innerText.length - 1));
+    btnText.innerHTML = "Read more";
+    long_desc.innerText = l_desc_trunc;
   }
 }

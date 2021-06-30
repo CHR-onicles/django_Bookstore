@@ -1,19 +1,38 @@
-{% extends 'base.html' %} {% block content %}
-<h2 class="text-light text-center display-5">{{ book.title }}</h2>
-<div class="d-flex justify-content-center my-5">
-  <img src="{{ book.thumbnailUrl}}" width="300" alt="" />
-</div>
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZeBook - detail</title>
+  </head>
+  <body>
+    {% block content %}
+    <h2 class="text-light text-center display-5">{{ book.title }}</h2>
+    <div class="d-flex justify-content-center my-5">
+      <img src="{{ book.thumbnailUrl}}" width="300" alt="" />
+    </div>
 
-<div class="container detail-text-div my-5">
-  <h6 class="display-6 mb-0">Quick Summary:</h6>
-  {% if book.shortDescription is None %}
-  <p class="fst-italic">This book is about something too interesting to write a short description about.</p>
-  {% else %}
-  <p class="fst-italic">{{ book.shortDescription }}</p>
-  {% endif %}
+    <div class="container detail-text-div my-5">
+      <h6 class="display-6 mb-0">Quick Summary:</h6>
+      {% if book.shortDescription is None %}
+      <p class="fst-italic">This book is about something too interesting to write a short description about.</p>
+      {% else %}
+      <p class="fst-italic">{{ book.shortDescription }}</p>
+      {% endif %}
 
-  <h6 class="display-6 mb-0">Description:</h6>
-  <p class="fst-italic">{{ book.longDescription|truncatewords:"50"}} <span>...</span></p>
-  <button class="btn mb-1 read-more-btn">Read more...</button>
-</div>
-{% endblock content %}
+      <h6 class="display-6 mb-0">Description:</h6>
+      <p class="fst-italic" id="long-desc">{{ book.longDescription|safe|truncatewords:"100"}}</p>
+      <!-- TODO: Add Read more button here -->
+      {% comment %}
+      <button class="btn mb-3 read-more-btn" onclick="readMoreFunc()" id="read-more">Read more...</button>
+      {% endcomment%}
+    </div>
+    {% endblock content %}
+
+    <!-- SCRIPTS -->
+    <!-- TODO: Load JS here -->
+    <!-- END SCRIPTS -->
+  </body>
+</html>
