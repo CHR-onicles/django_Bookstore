@@ -82,13 +82,12 @@ h1 {
   gap: 0;
   grid-template-columns: 1fr;
   border-radius: 10px;
-  text-align: center;
-  align-items: flex-start;
+  /* justify-items: left; */ /* not working because container class  is overriding it */
 }
 
 .display-6 {
   font-size: 1.5em;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 /* .read-more-btn {

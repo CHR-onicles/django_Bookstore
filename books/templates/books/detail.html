@@ -14,13 +14,19 @@
       <img src="{{ book.thumbnailUrl}}" width="300" alt="" />
     </div>
 
-    <div class="container detail-text-div my-5">
-      <h6 class="display-6 mb-0">Quick Summary:</h6>
+    <div class="container my-5 detail-text-div">
+      <h6 class="display-6 mb-0">About:</h6>
       {% if book.shortDescription is None %}
       <p class="fst-italic px-4">This book is about something too interesting to write a short description about.</p>
       {% else %}
       <p class="fst-italic px-4">{{ book.shortDescription }}</p>
       {% endif %}
+
+      <h6 class="display-6 mb-0">Author(s):</h6>
+      <p class="fst-bold px-4">{{ book.authors|join:", "}}</p>
+
+      <h6 class="display-6 mb-0">Pages:</h6>
+      <p class="fst-bold px-4">Total of {{ book.pageCount }} pages</p>
 
       <h6 class="display-6 mb-0">Description:</h6>
       <p class="fst-italic px-4" id="long-desc">{{ book.longDescription|safe|truncatewords:"200"}}</p>
