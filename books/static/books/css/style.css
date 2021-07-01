@@ -92,3 +92,7 @@ h1 {
 textarea {
   border-radius: 10px;
 }
+
+form {
+  font-family: "Times New Roman", Times, serif;
+}

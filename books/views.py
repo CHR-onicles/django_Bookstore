@@ -21,3 +21,7 @@ def detail(request, id):
         'book': single_book
     }
     return render(request, 'books/detail.html', context_dict)
+
+
+def review(request):
+    pass
