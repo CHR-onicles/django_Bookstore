@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,  get_object_or_404
 
 
 from .models import Book
@@ -15,7 +15,7 @@ def index(request):
 
 
 def detail(request, id):
-    single_book = Book.objects.get(pk=id)
+    single_book = get_object_or_404(Book, pk=id)
 
     context_dict = {
         'book': single_book
