@@ -40,7 +40,7 @@
     <form
       class="container form-floating my-5 d-flex flex-column justify-content-center"
       method="POST"
-      action="{% url 'review' %}"
+      action="{% url 'review' book.id%}"
     >
       {% csrf_token %}
       <textarea class="form-control" placeholder="Leave a review here" name="review" style="height: 6.25rem"></textarea>
@@ -50,7 +50,7 @@
       </div>
     </form>
 
-    <div class="container bg-white rounded-2">
+    <div class="container bg-white rounded-2 mx-auto d-block">
       {% for review in reviews %}
       <p class="text-center">{{ review.body }}</p>
       {% endfor %}

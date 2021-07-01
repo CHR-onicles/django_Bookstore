@@ -8,5 +8,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='home'),
     path('book/<int:id>', views.detail, name='detail'),
-    path('review', views.review, name='review')
+    path('<int:id>/review', views.review, name='review')
 ]

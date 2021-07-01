@@ -16,7 +16,7 @@ def index(request):
 
 def detail(request, id):
     single_book = get_object_or_404(Book, pk=id)
-    reviews = Review.objects.order_by('-id')
+    reviews = Review.objects.filter(book_id=id).order_by('-created_at')
 
     context_dict = {
         'book': single_book,
@@ -25,8 +25,8 @@ def detail(request, id):
     return render(request, 'books/detail.html', context_dict)
 
 
-def review(request):
+def review(request, id):
     body = request.POST['review']
-    new_review = Review(body=body)
+    new_review = Review(body=body, book_id=id)
     new_review.save()
     return redirect('home')
