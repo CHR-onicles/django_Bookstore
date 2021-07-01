@@ -49,6 +49,12 @@
         <button class="btn w-25" type="submit">Submit</button>
       </div>
     </form>
+
+    <div class="container bg-white rounded-2">
+      {% for review in reviews %}
+      <p class="text-center">{{ review.body }}</p>
+      {% endfor %}
+    </div>
     {% endblock content %}
 
     <!-- SCRIPTS -->

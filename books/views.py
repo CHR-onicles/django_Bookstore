@@ -16,9 +16,11 @@ def index(request):
 
 def detail(request, id):
     single_book = get_object_or_404(Book, pk=id)
+    reviews = Review.objects.order_by('-id')
 
     context_dict = {
-        'book': single_book
+        'book': single_book,
+        'reviews': reviews
     }
     return render(request, 'books/detail.html', context_dict)
 
