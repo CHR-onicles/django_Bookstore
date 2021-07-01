@@ -19,7 +19,7 @@
       {% if book.shortDescription is None %}
       <p class="fst-italic px-4">This book is about something too interesting to write a short description about.</p>
       {% else %}
-      <p class="fst-italic px-4">{{ book.shortDescription }}</p>
+      <p class="fst-italic px-4 text-center">{{ book.shortDescription }}</p>
       {% endif %}
 
       <h6 class="display-6 mb-0">Author(s):</h6>
@@ -29,7 +29,7 @@
       <p class="fst-bold px-4">Total of {{ book.pageCount }} pages</p>
 
       <h6 class="display-6 mb-0">Description:</h6>
-      <p class="fst-italic px-4">{{ book.longDescription|safe|truncatewords:"200"}}</p>
+      <p class="fst-italic px-4 text-center">{{ book.longDescription|safe|truncatewords:"200"}}</p>
 
       <!-- TODO: Add Read more button here -->
       {% comment %} <button class="btn mb-3 read-more-btn" onclick="readMore()" id="read-more">Read more...</button>
