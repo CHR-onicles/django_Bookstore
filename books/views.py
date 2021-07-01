@@ -1,7 +1,7 @@
-from django.shortcuts import render,  get_object_or_404
+from django.shortcuts import render,  get_object_or_404, redirect
 
 
-from .models import Book
+from .models import Book, Review
 
 
 def index(request):
@@ -24,4 +24,7 @@ def detail(request, id):
 
 
 def review(request):
-    pass
+    body = request.POST['review']
+    new_review = Review(body=body)
+    new_review.save()
+    return redirect('home')

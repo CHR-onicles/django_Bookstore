@@ -11,3 +11,13 @@ class Book(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+
+class Review(models.Model):
+    body = models.TextField()
+
+    def __str__(self) -> str:
+        if len(self.body) > 20:
+            return self.body[:20] + '...'
+        else:
+            return self.body
