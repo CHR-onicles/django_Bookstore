@@ -1,14 +1,7 @@
-from django.http.response import HttpResponse
 from django.shortcuts import render
-# import os
-# import json
+
 
 from .models import Book
-# from django_Bookstore.settings import BASE_DIR
-
-# book_data = open(os.path.join(
-#     BASE_DIR, 'books/static/books/assets/books.json')).read()
-# data = json.loads(book_data)
 
 
 def index(request):
@@ -22,11 +15,7 @@ def index(request):
 
 
 def detail(request, id):
-    single_book = ''
-
-    for book in data:
-        if book.get('id') == id:
-            single_book = book
+    single_book = Book.objects.get(pk=id)
 
     context_dict = {
         'book': single_book
