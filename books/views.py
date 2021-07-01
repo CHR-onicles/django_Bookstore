@@ -1,17 +1,16 @@
 from django.shortcuts import render,  get_object_or_404, redirect
+from django.views import generic
 
 
 from .models import Book, Review
 
 
-def index(request):
+class IndexView(generic.ListView):
+    template_name = 'books/index.html'
+    context_object_name = 'books'
 
-    data = Book.objects.all()
-
-    context_dict = {
-        'books': data
-    }
-    return render(request, 'books/index.html', context_dict)
+    def get_queryset(self):
+        return Book.objects.all()
 
 
 def detail(request, id):
