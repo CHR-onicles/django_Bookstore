@@ -1,4 +1,4 @@
-from django.shortcuts import render,  get_object_or_404, redirect
+from django.shortcuts import render, redirect
 from django.views import generic
 
 
@@ -13,15 +13,10 @@ class IndexView(generic.ListView):
         return Book.objects.all()
 
 
-def detail(request, id):
-    single_book = get_object_or_404(Book, pk=id)
-    reviews = Review.objects.filter(book_id=id).order_by('-created_at')
-
-    context_dict = {
-        'book': single_book,
-        'reviews': reviews
-    }
-    return render(request, 'books/detail.html', context_dict)
+class BookDetailView(generic.DetailView):
+    #     reviews = Review.objects.filter(book_id=id).order_by('-created_at')
+    template_name = 'books/detail.html'
+    model = Book
 
 
 def review(request, id):
