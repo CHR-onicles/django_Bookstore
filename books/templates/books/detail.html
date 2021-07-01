@@ -22,7 +22,7 @@
       <p class="fst-italic px-4 text-center">{{ book.shortDescription }}</p>
       {% endif %}
 
-      <h6 class="display-6 mb-0">Author(s):</h6>
+      <h6 class="display-6 mb-0">Author{{book.authors|pluralize}}:</h6>
       <p class="fst-bold px-4">{{ book.authors|join:", "}}</p>
 
       <h6 class="display-6 mb-0">Pages:</h6>
