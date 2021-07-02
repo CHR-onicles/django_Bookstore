@@ -51,7 +51,7 @@
     </form>
 
     <div class="container bg-white rounded-2 mx-auto d-block">
-      {% for review in reviews %}
+      {% for review in book.review_set.all %}
       <p class="text-center">{{ review.body }}</p>
       {% endfor %}
     </div>
