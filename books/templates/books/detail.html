@@ -18,8 +18,12 @@
       <p class="fst-italic px-4 text-center">{{ book.shortDescription }}</p>
     {% endif %}
 
-    <h6 class="display-6 mb-0">Author(s):</h6>
-    <p class="fst-bold px-4 mb-1"></p>
+    <h6 class="display-6 mb-0">Author{{authors|pluralize}}:</h6>
+    <p class="fst-bold px-4 mb-1">
+      {% for author  in authors  %}
+        {{ author }},
+      {% endfor %}
+    </p>
 
     <h6 class="display-6 mb-0">Pages:</h6>
     <p class="fst-bold px-4">Total of {{ book.pageCount }} pages</p>
