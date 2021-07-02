@@ -16,7 +16,8 @@ class Book(models.Model):
 class Review(models.Model):
     body = models.TextField()
     created_at = models.DateTimeField(auto_now=True)
-    book_id = models.IntegerField(default=1)
+    # field name gets suffixed with _id because it connects with the ID of its parent
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, null=True)
 
     def __str__(self) -> str:
         if len(self.body) > 20:
