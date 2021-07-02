@@ -1,63 +1,58 @@
-{% extends 'base.html' %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ZeBook - detail</title>
-  </head>
-  <body>
-    {% block content %}
-    <h2 class="text-light text-center display-5">{{ book.title }}</h2>
-    <div class="d-flex justify-content-center my-5">
-      <img src="{{ book.thumbnailUrl}}" width="300" alt="" />
-    </div>
+{% extends 'base.html' %} 
 
-    <div class="container my-5 detail-text-div">
-      <h6 class="display-6 mb-0">About:</h6>
-      {% if book.shortDescription is None %}
+{% block page-title %}
+  <title>ZeBook - detail</title>
+{% endblock page-title%}
+
+{% block content %}
+  <h2 class="text-light text-center display-5">{{ book.title }}</h2>
+  <div class="d-flex justify-content-center my-5">
+    <img src="{{ book.thumbnailUrl}}" width="300" alt="" />
+  </div>
+
+  <div class="container my-5 detail-text-div">
+    <h6 class="display-6 mb-0">About:</h6>
+    {% if book.shortDescription is None %}
       <p class="fst-italic px-4">This book is about something too interesting to write a short description about.</p>
-      {% else %}
+    {% else %}
       <p class="fst-italic px-4 text-center">{{ book.shortDescription }}</p>
-      {% endif %}
+    {% endif %}
 
-      <h6 class="display-6 mb-0">Author(s):</h6>
-      <p class="fst-bold px-4">{{ book.authors }}</p>
+    <h6 class="display-6 mb-0">Author(s):</h6>
+    <p class="fst-bold px-4">{{ book.authors }}</p>
 
-      <h6 class="display-6 mb-0">Pages:</h6>
-      <p class="fst-bold px-4">Total of {{ book.pageCount }} pages</p>
+    <h6 class="display-6 mb-0">Pages:</h6>
+    <p class="fst-bold px-4">Total of {{ book.pageCount }} pages</p>
 
-      <h6 class="display-6 mb-0">Description:</h6>
-      <p class="fst-italic px-4 text-center">{{ book.longDescription|safe|truncatewords:"200"}}</p>
+    <h6 class="display-6 mb-0">Description:</h6>
+    <p class="fst-italic px-4 text-center">{{ book.longDescription|safe|    truncatewords:"200"}}</p>
+    
+    <!-- TODO: Add Read more button here -->
+    {% comment %} <button class="btn mb-3 read-more-btn" onclick="readMore()" id="read-more">Read more...</button>
+    {% endcomment %}
+    <!--  TODO END -->
+  </div>
 
-      <!-- TODO: Add Read more button here -->
-      {% comment %} <button class="btn mb-3 read-more-btn" onclick="readMore()" id="read-more">Read more...</button>
-      {% endcomment %}
-      <!--  TODO END -->
+  <form
+    class="container form-floating my-5 d-flex flex-column justify-content-center"
+    method="POST"
+    action="{% url 'review' book.id%}">
+
+    {% csrf_token %}
+    <textarea class="form-control" placeholder="Leave a review here" name="review" style="height: 6.25rem"></textarea>
+    <label class="ms-1">Write your review here</label>
+    <div class="d-flex justify-content-end">
+      <button class="btn w-25" type="submit">Submit</button>
     </div>
+  </form>
 
-    <form
-      class="container form-floating my-5 d-flex flex-column justify-content-center"
-      method="POST"
-      action="{% url 'review' book.id%}"
-    >
-      {% csrf_token %}
-      <textarea class="form-control" placeholder="Leave a review here" name="review" style="height: 6.25rem"></textarea>
-      <label class="ms-1">Write your review here</label>
-      <div class="d-flex justify-content-end">
-        <button class="btn w-25" type="submit">Submit</button>
-      </div>
-    </form>
-
-    <div class="container bg-white rounded-2 mx-auto d-block">
-      {% for review in reviews %}
+  <div class="container bg-white rounded-2 mx-auto d-block">
+    {% for review in reviews %}
       <p class="text-center">{{ review.body|capfirst }}</p>
-      {% endfor %}
-    </div>
-    {% endblock content %}
+    {% endfor %}
+  </div>
 
-    <!-- SCRIPTS -->
-    <!-- END SCRIPTS -->
-  </body>
-</html>
+{% endblock content %}
+
+<!-- SCRIPTS -->
+<!-- END SCRIPTS -->
