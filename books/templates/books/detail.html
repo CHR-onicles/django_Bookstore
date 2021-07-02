@@ -17,7 +17,7 @@
     {% else %}
       <p class="fst-italic px-4 text-center">{{ book.shortDescription }}</p>
     {% endif %}
-
+    
     <h6 class="display-6 mb-0">Author{{authors|pluralize}}:</h6>
     <p class="fst-bold px-4 mb-1">
       {% for author  in authors  %}
@@ -29,10 +29,13 @@
     <p class="fst-bold px-4">Total of {{ book.pageCount }} pages</p>
 
     <h6 class="display-6 mb-0">Description:</h6>
-    <p class="fst-italic px-4 text-center">{{ book.longDescription|safe|    truncatewords:"200"}}</p>
+    <p class="fst-italic px-4 text-center">
+      {{ book.longDescription|safe|truncatewords:"200"}}
+    </p>
     
     <!-- TODO: Add Read more button here -->
-    {% comment %} <button class="btn mb-3 read-more-btn" onclick="readMore()" id="read-more">Read more...</button>
+    {% comment %}
+     <button class="btn mb-3 read-more-btn" onclick="readMore()" id="read-more">Read more...</button>
     {% endcomment %}
     <!--  TODO END -->
   </div>
