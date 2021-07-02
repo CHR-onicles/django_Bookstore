@@ -17,7 +17,7 @@
     {% else %}
       <p class="fst-italic px-4 text-center">{{ book.shortDescription }}</p>
     {% endif %}
-    
+
     <h6 class="display-6 mb-0">Author{{authors|pluralize}}:</h6>
     <p class="fst-bold px-4 mb-1">
       {% for author  in authors  %}
@@ -53,11 +53,13 @@
     </div>
   </form>
 
-  <div class="container bg-white rounded-2 mx-auto d-block">
-    {% for review in reviews %}
-      <p class="text-center">{{ review.body|capfirst }}</p>
+  {% for review in reviews %}
+  {% if review.body|length > 1 %}
+  <div class=" bg-white rounded-2 d-block px-2 mx-5 review-div" style="width: fit-content; max-width: 40vw; line-height: 1.2rem;">
+      <p class="py-2">{{ review.body|capfirst }}</p>
+    </div>
+  {% endif %}
     {% endfor %}
-  </div>
 
 {% endblock content %}
 

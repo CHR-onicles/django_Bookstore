@@ -97,3 +97,20 @@ label {
   font-family: "Times New Roman", Times, serif;
   color: brown;
 }
+
+.review-div{
+  position: relative;
+}
+
+.review-div::before{
+  content: "";
+  position: absolute;
+  background-color: white;
+  top: 0;
+  left: -0.5%;
+  transform: skew(30deg);
+  height: 1rem;
+  width: 1rem;
+  z-index: -1;
+  border-radius: 2px;
+}
