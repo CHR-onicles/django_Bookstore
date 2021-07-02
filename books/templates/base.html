@@ -23,7 +23,7 @@
     <!-- NAV BAR -->
     <nav class="navbar navbar-expand-md navbar-light" style="background-color: rgb(253, 234, 211)">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">ZeBooks</a>
+        <a class="navbar-brand" href="{% url 'home' %}">ZeBooks</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -38,7 +38,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Featured</a>
