@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 from .models import Author, Book, Review
 
 
-class IndexView(ListView):
+class IndexView(LoginRequiredMixin, ListView):
+    login_url = '/login/'
     template_name = 'books/index.html'
     context_object_name = 'books'
 
