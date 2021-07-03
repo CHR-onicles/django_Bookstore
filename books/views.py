@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 
 
-from .models import Book, Review
+from .models import Author, Book, Review
 
 
 class IndexView(ListView):
@@ -29,7 +29,7 @@ def author(request, author):
     context_dict = {
         'books': books,
     }
-    return render(request, 'books/index.html', context_dict)
+    return render(request, 'books/author_books.html', context_dict)
 
 def review(request, id):
     body = request.POST['review']
