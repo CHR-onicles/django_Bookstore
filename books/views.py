@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
-from django.views import generic
+from django.views.generic import ListView, DetailView
 
 
 from .models import Book, Review
 
 
-class IndexView(generic.ListView):
+class IndexView(ListView):
     template_name = 'books/index.html'
     context_object_name = 'books'
 
@@ -13,7 +13,7 @@ class IndexView(generic.ListView):
         return Book.objects.all()
 
 
-class BookDetailView(generic.DetailView):
+class BookDetailView(DetailView):
     template_name = 'books/detail.html'
     model = Book
 
@@ -24,8 +24,17 @@ class BookDetailView(generic.DetailView):
         return context
 
 
+def author(request, author):
+    books = Book.objects.filter(authors__name=author)
+    context_dict = {
+        'books': books,
+    }
+    return render(request, 'books/index.html', context_dict)
+
 def review(request, id):
     body = request.POST['review']
     new_review = Review(body=body, book_id=id)
     new_review.save()
     return redirect('home')
+
+
