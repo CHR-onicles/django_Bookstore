@@ -7,7 +7,6 @@ from .models import Author, Book, Review
 
 
 class IndexView(LoginRequiredMixin, ListView):
-    login_url = '/login/'
     template_name = 'books/index.html'
     context_object_name = 'books'
 
@@ -15,7 +14,7 @@ class IndexView(LoginRequiredMixin, ListView):
         return Book.objects.all()
 
 
-class BookDetailView(DetailView):
+class BookDetailView(LoginRequiredMixin, DetailView):
     template_name = 'books/detail.html'
     model = Book
 
