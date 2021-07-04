@@ -1,5 +1,14 @@
 {% extends "base.html" %}
 
+{% block navbar %}
+    <nav class="navbar navbar-expand-md navbar-light" style="background-color: rgb(253, 234, 211)">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'home' %}">ZeBooks</a>
+            <button class="btn btnlogout ms-auto">Logout</button>
+        </div>
+      </nav>
+{% endblock navbar %}
+
 {% block content %}
 
     {% if form.errors %}
@@ -16,10 +25,10 @@
         {% endif %}
     {% endif %}
     
-    <div class="container d-flex flex-column justify-content-center mx-auto w-75 align-items-center" style="height: 50vh">
+    <div class="container d-flex flex-column justify-content-center mx-auto w-50 align-items-center rounded-2" style="height: 40vh; background: rgb(197, 158, 111)">
          <form method="POST" action="{% url 'login' %}">
         {% csrf_token %}
-        <table>
+        <table class="mytable">
             <tr>
                 <td class="text-white">{{ form.username.label_tag }}</td>
                 <td>{{ form.username }}</td>
@@ -30,7 +39,9 @@
             </tr>
         </table>
 
-        <button class="btn px-3" type="submit">Login</button>
+        <div class="d-flex justify-content-end mt-2">
+            <button class="btn btnlogin w-100" type="submit">Login</button>
+        </div>
         <input type="hidden" name="next" value="{{ next }}">
     </form>
 
