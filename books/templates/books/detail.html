@@ -40,7 +40,9 @@
     <!--  TODO END -->
   </div>
 
-  <form
+  <h2 class="display-3 text-white text-center">Reviews</h2>
+  {% if user.is_authenticated %}  
+    <form
     class="container form-floating my-5 d-flex flex-column justify-content-center"
     method="POST"
     action="{% url 'review' book.id%}">
@@ -51,7 +53,13 @@
     <div class="d-flex justify-content-end">
       <button class="btn w-25" type="submit">Submit</button>
     </div>
-  </form>
+    </form>
+  {% else %}
+  <div class="d-flex justify-content-center my-3">
+    <a href="{% url 'login' %}?next={{ request.path}}" class="btn btn-login">Login to write a review</a>
+    <!-- Added next to send user back to the same page he was before being redirected to login -->
+  </div>
+  {% endif %}
 
   {% for review in reviews %}
   {% if review.body|length > 1 %}

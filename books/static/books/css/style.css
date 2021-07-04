@@ -160,13 +160,13 @@ border-color: rgb(7, 177, 84);
   min-height: min-content;
 }
 
-p > a{
+.login-div p  a{
   text-decoration: none;
   color: rgb(0, 225, 255);
   transition: all 0.3s ease;
 }
 
-p > a:hover{
+.login-div p  a:hover{
     color: rgb(0, 225, 255);
   letter-spacing: 2px;
 }
