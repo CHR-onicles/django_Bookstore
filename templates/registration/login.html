@@ -25,7 +25,7 @@
         {% endif %}
     {% endif %}
     
-    <div class="container d-flex flex-column justify-content-center align-content-center mx-auto mt-5 w-50 align-items-center rounded-2" style="height: 30vh; background: rgb(233, 232, 232)">
+    <div class="container d-flex flex-column justify-content-center align-content-center mx-auto mt-5 w-50 align-items-center  login-div" style="height: 30vh;">
          <form method="POST" action="{% url 'login' %}">
         {% csrf_token %}
         <table class="mytable">
