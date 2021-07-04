@@ -22,4 +22,5 @@ urlpatterns = [
     path('books/', include('books.urls')),
     path('login/', auth_view.LoginView.as_view(redirect_authenticated_user=True)),  # to prevent authenticated users from going to back to the login screen
     path('', include('django.contrib.auth.urls' )),
+    # path('', auth_view.LoginView.as_view(redirect_authenticated_user=True)),
 ]

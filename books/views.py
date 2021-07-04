@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
-from django.contrib.auth.mixins import LoginRequiredMixin
+# from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 from .models import Author, Book, Review
 
 
-class IndexView(LoginRequiredMixin, ListView):
+class IndexView(ListView):
     template_name = 'books/index.html'
     context_object_name = 'books'
 
@@ -14,7 +14,7 @@ class IndexView(LoginRequiredMixin, ListView):
         return Book.objects.all()
 
 
-class BookDetailView(LoginRequiredMixin, DetailView):
+class BookDetailView(DetailView):
     template_name = 'books/detail.html'
     model = Book
 
