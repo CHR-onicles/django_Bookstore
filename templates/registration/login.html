@@ -28,7 +28,7 @@
     <div class="container d-flex flex-column justify-content-center align-content-center mx-auto mt-5 align-items-center  login-div py-4">
          <form method="POST" action="{% url 'login' %}">
         {% csrf_token %}
-        <table class="mytable">
+        <table class="mt-3">
             <tr>
                 <td class="text-white fw-bold">{{ form.username.label_tag }}</td>
                 <td>{{ form.username }}</td>
