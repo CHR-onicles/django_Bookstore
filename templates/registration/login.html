@@ -25,16 +25,16 @@
         {% endif %}
     {% endif %}
     
-    <div class="container d-flex flex-column justify-content-center mx-auto w-50 align-items-center rounded-2" style="height: 40vh; background: rgb(197, 158, 111)">
+    <div class="container d-flex flex-column justify-content-center align-content-center mx-auto mt-5 w-50 align-items-center rounded-2" style="height: 30vh; background: rgb(233, 232, 232)">
          <form method="POST" action="{% url 'login' %}">
         {% csrf_token %}
         <table class="mytable">
             <tr>
-                <td class="text-white">{{ form.username.label_tag }}</td>
+                <td class="text-dark fw-bold">{{ form.username.label_tag }}</td>
                 <td>{{ form.username }}</td>
             </tr>
             <tr>
-                <td class="text-white">{{ form.password.label_tag }}</td>
+                <td class="text-dark fw-bold">{{ form.password.label_tag }}</td>
                 <td>{{ form.password }}</td>
             </tr>
         </table>
