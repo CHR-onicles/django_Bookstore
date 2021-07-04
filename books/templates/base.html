@@ -53,6 +53,10 @@
                 <a class="nav-link" href="#">Contact</a>
               </li>
             </ul>
+
+            {% if user.is_authenticated %}
+              <a href="/logout" class="btn btn-logout ms-auto">Logout</a>
+            {% endif %}
           </div>
         </div>
       </nav>

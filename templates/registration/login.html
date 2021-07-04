@@ -1,14 +1,5 @@
 {% extends "base.html" %}
 
-{% block navbar %}
-    <nav class="navbar navbar-expand-md navbar-light" style="background-color: rgb(253, 234, 211)">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'home' %}">ZeBooks</a>
-            <button class="btn btn-logout ms-auto">Logout</button>
-        </div>
-      </nav>
-{% endblock navbar %}
-
 {% block content %}
 
     {% if form.errors %}
