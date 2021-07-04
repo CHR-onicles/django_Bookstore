@@ -4,7 +4,7 @@
     <nav class="navbar navbar-expand-md navbar-light" style="background-color: rgb(253, 234, 211)">
         <div class="container-fluid">
           <a class="navbar-brand" href="{% url 'home' %}">ZeBooks</a>
-            <button class="btn btnlogout ms-auto">Logout</button>
+            <button class="btn btn-logout ms-auto">Logout</button>
         </div>
       </nav>
 {% endblock navbar %}
@@ -40,7 +40,7 @@
         </table>
 
         <div class="d-flex justify-content-end mt-2">
-            <button class="btn btnlogin w-100" type="submit">Login</button>
+            <button class="btn btn-login w-100" type="submit">Login</button>
         </div>
         <input type="hidden" name="next" value="{{ next }}">
     </form>

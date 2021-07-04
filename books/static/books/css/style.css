@@ -110,30 +110,30 @@ textarea {
   border-radius: 2px;
 }
 
-.btnlogin{
+.btn-login{
 background-color: rgb(10, 107, 54);
 border-color: rgb(10, 107, 54);
 }
 
-.btnlogin:hover::before{
+.btn-login:hover::before{
 background-color: rgb(7, 177, 84);
-border-color: rgb: rgb(7, 177, 84);
+border-color: rgb(7, 177, 84);
 }
 
-.btnlogin:hover{
+.btn-login:hover{
   border-color: rgb(7, 177, 84);
 }
 
-.btnlogout{
+.btn-logout{
   background-color: rgb(73, 73, 73);
   border-color: rgb(73, 73, 73);
 }
 
-.btnlogout:hover::before{
+.btn-logout:hover::before{
   background-color: black;
   border-color: black;
 }
 
-.btnlogout:hover{
+.btn-logout:hover{
   border-color: black;
 }
