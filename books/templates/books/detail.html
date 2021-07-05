@@ -65,7 +65,7 @@
     {% if review.body|length > 1 %}
       <div class=" bg-white rounded-2 d-block px-2 mx-5 review-div" style="width: fit-content; max-width: 40vw; line-height: 1.2rem;">
           <p class="mb-1 fw-bold" style="color: black;">{{ review.user }}:</p>
-          <p class="py-2" style="color: brown;">{{ review.body|capfirst }}</p>
+          <p class="py-1" style="color: brown;">{{ review.body|capfirst }}</p>
           <p class="text-end text-black-50">{{ review.created_at }}</p>
         </div>
     {% endif %}
