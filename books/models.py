@@ -1,5 +1,6 @@
 from django.db import models
-from django.db.models.base import ModelState
+# from django.db.models.base import ModelState
+from django.contrib.auth.models import User
 
 
 class Author(models.Model):
@@ -24,6 +25,7 @@ class Book(models.Model):
 
 class Review(models.Model):
     body = models.TextField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now=True)
     # field name gets suffixed with _id because it connects with the ID of its parent
     book = models.ForeignKey(Book, on_delete=models.CASCADE, null=True)
